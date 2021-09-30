@@ -1,9 +1,9 @@
 FROM node:alpine
 WORKDIR /app
-COPY package.json .
+COPY package.json ./
 COPY package-lock.json ./
 RUN npm install
-COPY . .
+COPY . ./
 # CREATE STATIC ASSETS
 RUN npm run build
 
