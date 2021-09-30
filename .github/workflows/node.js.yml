@@ -21,9 +21,11 @@ jobs:
       with:
         node-version: 12.x
         cache: 'npm'
+    
+    - name: Install packages
+      run: npm ci
 
     - name: Run tests
-      run: npm ci
       run: npm test
 
   deploy:
