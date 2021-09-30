@@ -1,11 +1,9 @@
-FROM node:alpine
-WORKDIR /app
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install
-COPY . ./
-# CREATE STATIC ASSETS
-RUN npm run build
+FROM python:2.7
 
-FROM nginx 
-COPY --from=0 /app/build /usr/share/nginx/html
+# Add sample application
+ADD application.py /tmp/application.py
+
+EXPOSE 8000
+
+# Run it
+ENTRYPOINT ["python", "/tmp/application.py"]
