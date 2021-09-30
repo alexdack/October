@@ -3,7 +3,7 @@ services:
   deployment-prod:
     build:
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     ports:
      - '80:3000'
       
