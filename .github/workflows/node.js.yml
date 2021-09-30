@@ -39,7 +39,7 @@ jobs:
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: Letterwell Frontend
-        enviroment_name: Letterwellfrontend-env
+        environment_name: Letterwellfrontend-env
         version_label: "letterwell-frontend-deployment-${{ steps.format-time.outputs.replaced }}"
         region: eu-west-2
         deployment_package: deploy.zip
