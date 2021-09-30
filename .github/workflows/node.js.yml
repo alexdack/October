@@ -10,6 +10,20 @@ on:
     branches: [ main ]
 
 jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Latest Repo
+      uses: actions/checkout@v2
+      with:
+        node-version: 12.x
+        cache: 'npm'
+
+    - name: Run tests
+      uses: npm test
+
+
   deploy:
 
     runs-on: ubuntu-latest
